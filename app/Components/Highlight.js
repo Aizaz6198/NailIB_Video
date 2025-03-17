@@ -15,25 +15,21 @@ export const Highlight = () => {
   useEffect(() => {
     if (!highRef.current) return;
     
-    // Create a timeline for smoother sequence animation
     const tl = gsap.timeline();
     
-    // Animate heading
     tl.fromTo(
       headingRef.current,
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
     );
     
-    // Animate description
     tl.fromTo(
       descriptionRef.current,
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
-      "-=0.4" // Start slightly before previous animation ends
+      "-=0.4"
     );
     
-    // Animate button
     tl.fromTo(
       buttonRef.current,
       { opacity: 0, y: 20, scale: 0.95 },
@@ -41,7 +37,6 @@ export const Highlight = () => {
       "-=0.3"
     );
     
-
     tl.fromTo(
       imageRef.current,
       { opacity: 0, x: 30, rotateY: 5 },
@@ -49,7 +44,6 @@ export const Highlight = () => {
       "-=0.6"
     );
     
-    // Animate decorative elements
     decorationRefs.current.forEach((el) => {
       tl.fromTo(
         el,
@@ -72,7 +66,6 @@ export const Highlight = () => {
       ref={highRef} 
       className="relative bg-gradient-to-br from-blue-600 to-blue-800 py-24 text-white overflow-hidden"
     >
-      {/* Enhanced decorative elements */}
       <div 
         ref={addToRefs}
         className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse" 
@@ -90,11 +83,9 @@ export const Highlight = () => {
         className="absolute bottom-10 right-10 w-28 h-28 bg-white/5 rounded-full animate-pulse animation-delay-500" 
       />
       
-      {/* Subtle mesh gradient background */}
       <div className="absolute inset-0 bg-[url('/mesh-bg.svg')] opacity-10"></div>
       
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-12 relative z-10">
-        {/* Left Content Section */}
         <div className="md:w-1/2 text-center md:text-left space-y-6">
           <h1 
             ref={headingRef}
@@ -104,11 +95,11 @@ export const Highlight = () => {
           </h1>
           
           <p 
-  ref={descriptionRef}
-  className="text-lg md:text-xl text-blue-100 max-w-lg"
->
-  Unlock expert-led video lessons designed to simplify IB concepts and boost your confidence for exam success.
-</p>
+            ref={descriptionRef}
+            className="text-lg md:text-xl text-blue-100 max-w-lg"
+          >
+            Unlock expert-led video lessons designed to simplify IB concepts and boost your confidence for exam success.
+          </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Link href="#">
@@ -136,62 +127,27 @@ export const Highlight = () => {
           </div>
         </div>
         
-        {/* Right Image Section */}
-       {/* Right Image Section */}
-<div
-  ref={imageRef}
-  className="md:w-1/2 flex justify-center"
->
-  <div className="relative w-full max-w-lg">
-    <div className="absolute -inset-0.5 bg-white/20 rounded-2xl blur opacity-70"></div>
-    <div className="relative rounded-xl overflow-hidden shadow-2xl border border-white/20">
-      {/* Image - commented out as it's overlapping with the video */}
-      
-      <Image
-        src="/assets/nailib.png"
-        alt="IB Video Platform"
-        width={600}
-        height={400}
-        className="w-full h-auto object-cover"
-        priority
-      />
-  
-      
-      {/* YouTube iframe - positioned correctly */}
-     
-{/* 
-<iframe
-  className="w-full h-[100px]"
-  src="blob:https://player.vimeo.com/6fa9d5c5-e91a-42dc-b996-409f0a0d1c4c"
-  title="Vimeo video"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-></iframe> */}
-      
-      {/* Video player overlay elements */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6 pointer-events-none">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center pointer-events-auto">
-              <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-blue-600 border-b-8 border-b-transparent ml-1"></div>
+        <div
+          ref={imageRef}
+          className="md:w-1/2 flex justify-center"
+        >
+          <div className="relative w-full max-w-lg">
+            <div className="absolute -inset-0.5 bg-white/20 rounded-2xl blur opacity-70"></div>
+            <div className="relative rounded-xl overflow-hidden shadow-2xl border border-white/20">
+              <Image
+                src="/assets/nailib.png"
+                alt="IB Video Platform"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover"
+                priority
+              />
+              <div className="absolute -right-4 -top-4 bg-yellow-400 text-blue-900 px-4 py-1 rounded-full font-bold shadow-lg transform rotate-12">
+                New Videos Weekly!
+              </div>
             </div>
-            <span className="text-white font-medium">Biology HL: Cell Division</span>
           </div>
-          <span className="text-white/80 text-sm">12:45</span>
         </div>
-        <div className="mt-3 w-full h-1 bg-white/30 rounded-full overflow-hidden">
-          <div className="h-full w-2/3 bg-blue-400 rounded-full"></div>
-        </div> 
-       </div>
-    </div>
-    
-    {/* Floating badge */}
-    <div className="absolute -right-4 -top-4 bg-yellow-400 text-blue-900 px-4 py-1 rounded-full font-bold shadow-lg transform rotate-12">
-      New Videos Weekly!
-    </div>
-  </div>
-</div>
       </div>
     </section>
   );
