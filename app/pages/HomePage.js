@@ -2,7 +2,7 @@
 import Head from "next/head";
 import { Highlight } from "../Components/Highlight.js";
 import { Features } from "../Components/Feature.js";
-import { joining} from "../Components/HTJ.js";
+import { Joining} from "../Components/HTJ.js";
 import { Navbar } from "../Components/Navbar.js";
 import { Testimonials } from "../Components/Testimonial.js";
 import { CallToAction } from "../Components/CTA.js";
@@ -25,7 +25,7 @@ export const Homepage = () => {
       <main className="pt-16">
         <Highlight />
         <Features />
-        <joining/>
+        <Joining/>
         <Subjects />
         <CostOfJoining />
         <Testimonials />
