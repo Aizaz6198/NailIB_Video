@@ -5,13 +5,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 1. Clone this repository to your local machine:
 
 ```
-git clone 
+git clone https://github.com/Aizaz6198/NailIB_Video.git
 ```
 
 2. Change into the project directory:
 
 ```
-cd 
+cd NailIB_Video
 ```
 
 3. Install the required dependencies:
@@ -38,7 +38,7 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can check out [Live Link]() - for live demo!
 
 ## Deploy on Vercel
 
